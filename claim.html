@@ -1,0 +1,746 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Lost and Found Portal - Claim Page</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet"
+        href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<style>
+
+    body{
+        font-family: 'Arial',sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f8f9fa;
+    }
+
+.navbar-brand img{
+    position:relative; 
+    padding: url('image/background.jpg')no repeat center center fixed;
+    background-size: cover;
+    color: #fff;
+}
+.claim-section::before{
+    content:"";
+    position: absolute;
+    top: 0;
+    left: 0;    
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+}   
+.claim-section.container{
+    position: relative;
+   z-index: 1;
+
+}
+.claim-section .display-4{
+    font-size: 3rem;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #f9f9fa;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    animation: colorChange 5s infinite alternate;
+}
+.claim-section .lead{
+    font-size: 1.2rem;
+    margin-bottom: 40px;
+    color: #ddd;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.1);
+    animation: fade-in 3s forwards;
+}
+.claim-section .lead {
+    font-size: 1.2em;
+    margin-bottom: 40px;
+    color: #ddd;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+    animation: fade-in 3s forwards;
+}
+
+@keyframes color-change {
+    0% {
+        color: #f8f9fa;
+    }
+
+    25% {
+        color: #8bdcff;
+    }
+
+    50% {
+        color: #ffffff;
+    }
+
+    75% {
+        color: #8bdcff;
+    }
+
+    100% {
+        color: #f8f9fa;
+    }
+}
+
+
+
+</style>
+
+
+<body>
+
+
+    <!-- ================= NAVIGATION BAR ================= -->
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+
+        <a href="index.html" class="navbar-brand">
+
+            <img src="/kiet.png"
+                alt="KIET LOGO"
+                width="30"
+                height="30"
+                class="d-inline-block align-top">
+
+            KIET
+
+        </a>
+
+
+        <!-- Mobile Menu Button -->
+
+        <button class="navbar-toggler"
+            type="button"
+            data-toggle="collapse"
+            data-target="#navbarNav">
+
+            <span class="navbar-toggler-icon"></span>
+
+        </button>
+
+
+        <!-- Navigation Links -->
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+
+            <ul class="navbar-nav ml-auto">
+
+                <li class="nav-item">
+                    <a href="index.html"
+                        class="nav-link active">
+                        Home
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="about.html"
+                        class="nav-link">
+                        About us
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="report.html"
+                        class="nav-link">
+                        Report items
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="claim.html"
+                        class="nav-link">
+                        Claim Missing
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="feedback.html"
+                        class="nav-link">
+                        Feedback
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="contact.html"
+                        class="nav-link">
+                        Contact us
+                    </a>
+                </li>
+
+            </ul>
+
+
+            <!-- Login / Register Buttons -->
+
+            <div class="d-flex ml-auto">
+
+                <button
+                    class="btn btn-outline-dark shadow-none mr-2"
+                    data-toggle="modal"
+                    data-target="#loginModal"
+                    type="button">
+
+                    Login
+
+                </button>
+
+
+                <button
+                    class="btn btn-outline-dark shadow-none"
+                    data-toggle="modal"
+                    data-target="#registerModal"
+                    type="button">
+
+                    Register
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </nav>
+
+
+
+    <!-- ================= REGISTRATION MODAL ================= -->
+
+    <div class="modal fade"
+        id="registerModal"
+        tabindex="-1"
+        role="dialog"
+        aria-labelledby="registerModalLabel"
+        aria-hidden="true">
+
+        <div class="modal-dialog modal-lg"
+            role="document">
+
+            <div class="modal-content">
+
+
+                <!-- Modal Header -->
+
+                <div class="modal-header">
+
+                    <h5 class="modal-title d-flex align-items-center"
+                        id="registerModalLabel">
+
+                        <i class="fas fa-user-plus mr-2"></i>
+
+                        User Registration
+
+                    </h5>
+
+
+                    <button type="button"
+                        class="close"
+                        data-dismiss="modal"
+                        aria-label="Close">
+
+                        <span aria-hidden="true">
+                            &times;
+                        </span>
+
+                    </button>
+
+                </div>
+
+
+
+                <!-- Modal Body -->
+
+                <div class="modal-body">
+
+                    <form id="register-form">
+
+
+                        <!-- Name -->
+
+                        <div class="form-group">
+
+                            <label for="name">
+                                Name
+                            </label>
+
+                            <input
+                                type="text"
+                                class="form-control"
+                                id="name"
+                                required>
+
+                        </div>
+
+
+                        <!-- Email -->
+
+                        <div class="form-group">
+
+                            <label for="email">
+                                Email
+                            </label>
+
+                            <input
+                                type="email"
+                                class="form-control"
+                                id="email"
+                                required>
+
+                        </div>
+
+
+                        <!-- Phone -->
+
+                        <div class="form-group">
+
+                            <label for="phone">
+                                Phone Number
+                            </label>
+
+                            <input
+                                type="tel"
+                                class="form-control"
+                                id="phone"
+                                required>
+
+                        </div>
+
+
+                        <!-- Picture -->
+
+                        <div class="form-group">
+
+                            <label for="picture">
+                                Picture
+                            </label>
+
+                            <input
+                                type="file"
+                                class="form-control"
+                                id="picture">
+
+                        </div>
+
+
+                        <!-- Address -->
+
+                        <div class="form-group">
+
+                            <label for="address">
+                                Address
+                            </label>
+
+                            <textarea
+                                class="form-control"
+                                id="address">
+                            </textarea>
+
+                        </div>
+
+
+                        <!-- Pincode -->
+
+                        <div class="form-group">
+
+                            <label for="pincode">
+                                Pincode
+                            </label>
+
+                            <input
+                                type="text"
+                                class="form-control"
+                                id="pincode">
+
+                        </div>
+
+
+                        <!-- Date of Birth -->
+
+                        <div class="form-group">
+
+                            <label for="dob">
+                                Date of Birth
+                            </label>
+
+                            <input
+                                type="date"
+                                class="form-control"
+                                id="dob">
+
+                        </div>
+
+
+                        <!-- Register Button -->
+
+                        <button
+                            type="submit"
+                            class="btn btn-primary">
+
+                            Register
+
+                        </button>
+
+                    </form>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+
+<!-- Claiom Section -->
+<section class="claim-section">
+    <div class="container">
+
+        <h1 class="display-4 text-center">
+            Claim Missing Item
+        </h1>
+
+        <p class="lead text-center">
+            Help us return your missing item.
+            Please provide the details below to claim your item.
+        </p>
+
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+
+                <div class="claim-card shadow-lg p-3 mb-5 bg-white">
+
+                    <form id="claimItemForm">
+
+                        <div class="form-group">
+                            <label for="claimantName">
+                                <i class="fas fa-user"></i>Your Name 
+                            </label>
+
+                            <input
+                                type="text"
+                                class="form-control"
+                                id="claimantName"
+                                placeholder="Enter your name"
+                            >
+                        </div>
+
+                        <div class="form-group">
+                            <label for="claimant-mail">
+                                <i class="fas fa-envelope"></i>Your Email 
+                            </label>
+
+                            <input
+                                type="email"
+                                class="form-control"
+                                id="claimant-mail"
+                                placeholder="Enter your email">
+                        </div>
+                        <div class="form-group">
+                            <label for="claimant-Itemname">
+                                <i class="fas fa-tag"></i>Item Name 
+                            </label>
+
+                            <input
+                                type="text"
+                                class="form-control"
+                                id="claimant-Itemname"
+                                placeholder="Enter the item name">
+                        </div>
+                         <div class="form-group">
+                            <label for="claimant-Item Description">
+                                <i class="fas fa-align-left"></i>Item Description 
+                               
+                            </label>
+                             <textarea id="ClaimItemDesc" class="form-control"rows="3" placeholder="Enter the item description"></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="claimant-ItemLocation">
+                                <i class="fas fa-map-marker-alt"></i>Last seen Location
+                            </label>
+
+                            <input
+                                type="text"
+                                class="form-control"
+                                id="claimant-Itemname"
+                                placeholder="Enter Last location">
+                        </div>
+                           <button type="submit" class="btn btn-primary btn-block">Submit</button>
+                        </div>
+
+                    </form>
+
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</section>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer class="text-center py-4 advanced-footer">
+
+        <div class="container">
+
+            <div class="row">
+
+
+                <!-- Contact Us -->
+
+                <div class="col-md-4">
+
+                    <h5>
+                        Contact us
+                    </h5>
+
+                    <ul class="list-unstyled">
+
+                        <li>
+
+                            <a href="mailto:info@kiet.edu">
+
+                                <i class="bi bi-envelope"></i>
+
+                                info@kiet.edu
+
+                            </a>
+
+                        </li>
+
+
+                        <li>
+
+                            <a href="tel:+9639476796">
+
+                                <i class="bi bi-telephone"></i>
+
+                                +963 947 6796
+
+                            </a>
+
+                        </li>
+
+                    </ul>
+
+
+                    <a href="#"
+                        class="text-white mr-2">
+
+                        <i class="fab fa-facebook-f"></i>
+
+                    </a>
+
+
+                    <a href="#"
+                        class="text-white mr-2">
+
+                        <i class="fab fa-twitter"></i>
+
+                    </a>
+
+
+                    <a href="#"
+                        class="text-white">
+
+                        <i class="fab fa-instagram"></i>
+
+                    </a>
+
+                </div>
+
+
+
+                <!-- Quick Links -->
+
+                <div class="col-md-4">
+
+                    <h5>
+                        Quick Links
+                    </h5>
+
+                    <ul class="list-unstyled">
+
+                        <li>
+
+                            <a href="about.html">
+
+                                <i class="bi bi-info-circle"></i>
+
+                                About us
+
+                            </a>
+
+                        </li>
+
+
+                        <li>
+
+                            <a href="categories.html">
+
+                                <i class="bi bi-card-list"></i>
+
+                                Categories
+
+                            </a>
+
+                        </li>
+
+
+                        <li>
+
+                            <a href="search.html">
+
+                                <i class="bi bi-search"></i>
+
+                                Search
+
+                            </a>
+
+                        </li>
+
+                    </ul>
+
+                </div>
+
+
+
+                <!-- Follow Us -->
+
+                <div class="col-md-4">
+
+                    <h5>
+                        Follow us
+                    </h5>
+
+
+                    <ul class="list-unstyled social-icons">
+
+                        <li>
+
+                            <a href="#">
+
+                                <i class="bi bi-facebook"></i>
+
+                            </a>
+
+                        </li>
+
+
+                        <li>
+
+                            <a href="#">
+
+                                <i class="bi bi-instagram"></i>
+
+                            </a>
+
+                        </li>
+
+
+                        <li>
+
+                            <a href="#">
+
+                                <i class="bi bi-linkedin"></i>
+
+                            </a>
+
+                        </li>
+
+                    </ul>
+
+
+
+                    <!-- Newsletter -->
+
+                    <div class="newsletter mt-4">
+
+                        <h5>
+                            Subscribe to our Newsletter
+                        </h5>
+
+
+                        <form id="NewsletterForm">
+
+                            <div class="input-group">
+
+                                <input
+                                    type="email"
+                                    class="form-control"
+                                    placeholder="Enter your email"
+                                    required>
+
+
+                                <div class="input-group-append">
+
+                                    <button
+                                        class="btn btn-primary"
+                                        type="submit">
+
+                                        Subscribe
+
+                                    </button>
+
+                                </div>
+
+                            </div>
+
+                        </form>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+
+            <!-- Copyright -->
+
+            <p class="mt-4 mb-0">
+
+                Copyright © 2024 Lost and Found Portal.
+                All rights reserved.
+
+            </p>
+
+        </div>
+
+    </footer>
+
+
+
+    <!-- ================= JAVASCRIPT ================= -->
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script src="script.js"></script>
+
+
+</body>
+
+</html>

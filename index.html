@@ -1,0 +1,834 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lost and Found Portal - Home page</title>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="style.css">
+  <style>
+
+
+    body {
+      font-family: 'Roboto', sans-serif;
+      margin: 0;
+      padding: 0;
+      /* background-color: #000; */
+    }
+
+    .contact-section {
+      padding: 100px 0;
+      color: #fff;
+      position: relative;
+      background: url('satelite.png') no-repeat center center fixed;
+      background-size: cover;
+    }
+
+    .contact-section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5); /* overlay */
+      z-index: 1;
+    }
+
+    .contact-section .container {
+      position: relative;
+      z-index: 2;
+    }
+
+    .contact-section .display-4 {
+      font-size: 3rem;
+      margin-bottom: 20px;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    }
+
+    .contact-section .lead {
+      font-size: 1.2rem;
+      margin-bottom: 40px;
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+    }
+
+    .contact-card {
+      background: rgba(255, 255, 255, 0.9);
+      border-radius: 8px;
+      padding: 30px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s, box-shadow 0.3s;
+      border: 4px solid transparent;
+      border-image: linear-gradient(45deg, #f3ec78, #af4261, #4fd1c5, #a6c1ee);
+      border-image-slice: 1;
+      animation: border-rotate 6s linear infinite;
+    }
+
+    @keyframes border-rotate {
+      0% { border-image: linear-gradient(45deg, #f3ec78, #af4261, #4fd1c5, #a6c1ee); }
+      25% { border-image: linear-gradient(135deg, #f3ec78, #af4261, #4fd1c5, #a6c1ee); }
+      50% { border-image: linear-gradient(225deg, #f3ec78, #af4261, #4fd1c5, #a6c1ee); }
+      75% { border-image: linear-gradient(315deg, #f3ec78, #af4261, #4fd1c5, #a6c1ee); }
+      100% { border-image: linear-gradient(405deg, #f3ec78, #af4261, #4fd1c5, #a6c1ee); }
+    }
+    @keyframes text-rotate {
+  0% { transform: rotateX(0deg) rotateY(0deg); }
+  50% { transform: rotateX(180deg) rotateY(180deg); }
+  100% { transform: rotateX(360deg) rotateY(360deg); }
+}
+/* text-rotate */
+.contact-section h1 {
+  font-size: 3rem;
+  animation: text-rotate 4s linear infinite;
+  transform-style: preserve-3d;
+}
+
+
+    .contact-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    }
+
+    .contact-card label {
+      font-weight: bold;
+      margin-bottom: 0.5rem;
+      color: #333;
+    }
+
+    .contact-card .form-control {
+      padding: 0.75rem;
+      margin-bottom: 1.5rem;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    .btn-primary {
+      padding: 10px 20px;
+      color: #fff;
+      font-size: 1.2rem;
+      border-radius: 4px;
+      transition: background-color 0.3s, transform 0.3s;
+      background-color: #007bff;
+      border: none;
+    }
+
+    .btn-primary:hover {
+      background-color: #0056b3;
+      transform: translateY(-3px);
+    }
+  </style>
+</head>
+<style>
+    body {
+    background: url('Feedback bg.png') no-repeat center center fixed;
+    background-size: cover;
+    color: #fff;
+    font-family: Arial, sans-serif;
+    
+}
+    .feedback-section {
+        background:rgba(0,0,0,0.6);
+        padding: 30px;
+        border-radius:10px;
+        max-width: 600px;
+        margin: 50px auto;
+    }
+    .feedback-section h1 {
+        margin-bottom: 20px;
+    }
+    .feedback-section .form-group{
+        position:relative;
+        margin-bottom:20px;
+    }
+    .feedback-section .form-group label{
+       display: block;
+       font-size:18px;
+       margin-bottom:5px;
+       color:#ddd;
+       text-shadow: 1px 1px 2px #000,0 0 25px #fefef0,0 0 5px #fff;
+       transform: perspective(500px) rotateX(0deg);
+       transition: transform 0.3s ease, text-shadow 0.3s ease;
+       display: flex;
+       align-items: center;
+    }
+    .feedback-section .form-group label{
+       margin-right: 10px;
+       font-size: 22px;
+       color: #fff;
+       transition:color 0.3s ease ;
+    }
+    .feedback-section .form-group label:hover{
+    transform: perspective(500px) rotateX(10deg);
+    text-shadow: 2px 2px 4px #000, 0 0 30px #f0f0f0, 0 0 10px #fff;   
+    }
+    .feedback-section .form-group label:hover i {
+        color: #f0f0f0;
+}
+.feedback-section .btn {
+    font-size:1.2cm;
+    padding: 10px 20px;
+    border-radius: 4px;
+    transition: background-color 0.3s, transform 0.3s;
+
+}
+
+@keyframes background-color {
+    0% {
+        background-color:#007bff;
+    }
+    50% {
+        background-color:#0056b3;
+    }
+    100% {
+        background-color:#007bff;
+    }
+}
+
+
+@keyframes transform {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-3px)scale(1.05);
+    }
+    100% {
+        transform: translateY(0pxx);
+    }
+   
+}
+   
+.feedback-section .btn-primary {
+    background-color: #007bff;
+    border:none;    
+}
+.feedback-section .btn-primary:hover{
+    background-color: #0056b3;
+    transform: translateY(-3px);
+}
+.feedback-section .alert {
+   display: none; 
+}
+.form-control:focus {
+   border-color:#007bff;
+   box-shadow: 0 0 8px rgba(0,123,155,0.8); 
+}
+.btn-primary:hover {
+    transform: scale(1.05);
+    box-shadow:0 5px 15px rgba(0,123,255,0.4);
+}
+.form-group label {
+    animation: floatlabel 1s ease-in-out infinite alternate;
+}
+@keyframes floatlabel {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-5px);
+    }
+   
+}
+
+</style>
+<style>/* Genral Styles */
+body{
+    font-family: Arial, sans-serif;
+    background-color: #d4dde7; /* Light gray background for better constrast */
+    }
+    
+    </style>
+<body>
+  <!--Navigation Bar-->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+
+  <a href="#" class="navbar-brand">
+    <img src="/kiet.png" alt="KIET LOGO" width="30" height="30" class="d-inline-block align-top">
+    KIET
+  </a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+  <span class="navbar-toggler-icon"></span>
+</button>
+
+
+  <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+      <li class="nav-item">
+        <a href="index.html" class="nav-link active">Home</a>
+      </li>
+      <li class="nav-item">
+        <a href="about.html" class="nav-link">About us</a>
+      </li>
+      <li class="nav-item">
+        <a href="report.html" class="nav-link">Report items</a>
+      </li>
+      <li class="nav-item">
+        <a href="claim.html" class="nav-link">Claim Missing</a> 
+      </li>
+      <li class="nav-item">
+        <a href="feedback.html" class="nav-link">Feedback</a>
+      </li>
+      <li class="nav-item">
+        <a href="contact.html" class="nav-link">Contact us</a>
+      </li>
+    </ul>
+    <div class="d-flex ml-auto">
+      <button class="btn btn-outline-dark shadow-none mr-2" data-toggle="modal" data-target="#loginModal" type="button">Login</button>
+      <button class="btn btn-outline-dark shadow-none" data-toggle="modal" data-target="#registerModal" type="button">Register</button>
+   </div> 
+</nav>
+
+
+
+
+<!-- Registration Modal -->
+<div class="modal fade" id="registerModal" tabindex="-1" role="dialog" aria-labelledby="registerModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+
+      <div class="modal-header">
+        <h5 class="modal-title d-flex align-items-center" id="registerModalLabel">
+          <i class="fas fa-user-plus mr-2"></i> User Registration
+        </h5>
+        <!-- Correct close button for Bootstrap 4 -->
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+
+      <!-- Modal Body -->
+      <div class="modal-body">
+        <form id="register-form">
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" class="form-control" id="name" required>
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" class="form-control" id="email" required>
+          </div>
+          <div class="form-group">
+            <label for="phone">Phone Number</label>
+            <input type="tel" class="form-control" id="phone" required>
+          </div>
+          <div class="form-group">
+            <label for="picture">Picture</label>
+            <input type="file" class="form-control" id="picture">
+          </div>
+          <div class="form-group">
+            <label for="address">Address</label>
+            <textarea class="form-control" id="address"></textarea>
+          </div>
+          <div class="form-group">
+            <label for="pincode">Pincode</label>
+            <input type="text" class="form-control" id="pincode">
+          </div>
+          <div class="form-group">
+            <label for="dob">Date of Birth</label>
+            <input type="date" class="form-control" id="dob">
+          </div>
+          <button type="submit" class="btn btn-primary">Register</button>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- Hero section -->
+ <header class="hero-setion text-center">
+    <h1> Welcome to the Lost and Found Portal </h1>
+    <p>Your easy solution for finding lost belongings.</p>
+ </header>
+
+ <!-- Search bar Section -->
+  <section class="search-bar-section text-center">
+    <div class="container">
+        <h2>Search for your lost Item</h2>
+        <div class="search-bar">
+            <input type="text" id="searchinput" placeholder="Enter item name...">
+            <button id="searchButton">Search</button>
+        </div>
+    </div>
+  </section>
+
+<!-- Contact Section -->
+ <main class="container">
+    <!-- about us section -->
+     <section id="about-us" class="my-4">
+        <h2 class="animated-header">About Us</h2>
+        <div class="row">
+            <div class="col-md-6">
+                <p>Traditionally, finding lost belongings was a 
+                    tough and time‑consuming task. With changing 
+                    technology, every process needs to be more 
+                    technical and easier to use, saving time and 
+                    effort for those in need. Office staff used
+                    to rely on pen and paper, with several layers
+                    of substantiation, which not only slowed down
+                    the process but also allowed for potential
+                    misuse of power.
+</p>
+<p>This portal has been developed to tackle these
+   major issues along with other minor problems.
+   The development of this new system contains
+   activities aimed at developing an online
+   application with a database integration
+   approach. Users get their user ID and password
+   to access their accounts. The database system
+   administrator has multiple features such as
+   adding, deleting, and updating information.
+</p>
+<p>The major aim of this project is to provide
+   a fast, easy, secure, and optimized platform
+   for people in need of our company's facilities 
+   and services. The traditional methods were 
+   time-consuming and physically tiring. This 
+   project aims to help people use our company's 
+   portal with ease from home. This portal provides 
+   simple lost and found solutions, offering a 
+   full-featured website that is flexible and 
+   user-friendly.
+</p>
+            </div>
+            <div class="col-md-6">
+                <img src="/home bg.png"alt="Lost and Found" class="img-fludid rounded animated-image">
+            </div>
+        </div>
+     </section>
+ </main>
+ <!-- categories Section -->
+  <section id="categories" class="my-4">
+  <h2 class="animated-header">Categories</h2>
+  <div class="row">
+    <div class="col-md-4">
+      <div class="category-card text-center">
+        <img src="Electronic.png" alt="Electronics" class="img-fluid rounded">
+        <h3>Electronics</h3>
+        <p>Find your lost electronic gadgets like mobile phones, laptops, cameras, etc.</p>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="category-card text-center">
+        <img src="/2.png" alt="Accessories" class="img-fluid rounded">
+        <h3>Accessories</h3>
+        <p>Lost your accessories? Search for watches, jewellery, glasses and more.</p>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="category-card text-center">
+        <img src="Documents.png" alt="Documents" class="img-fluid rounded">
+        <h3>Documents</h3>
+        <p>Retrieve your important documents such as ID Cards, Passports, and Certificates.</p>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- How it works Section -->
+ <section id="how-it-works" class="py-5">
+  <div class="container positive-relative">
+    <h2 class="animated-header text-center mb-4">How It Works</h2>
+    <div class="arrow-container"> 
+      <button class="btn btn-black" id="prev-how-it-works"><i class="bi bi-arrow-left"></i></button>
+     <i class="fas fa-chevron-up"></i>
+     </button>
+      <button class="btn btn-black" id="next-how-it-works"> 
+        <i class="fas fa-chevron-down"></i>
+      </button>
+      </div>  
+      <div class="how-it-works-wrapper" id="how-it-works-wrapper">
+        <div class="how-it-works-card">
+          <div class="how-it-works-icon">
+            <i class="fas fa-search"></i>
+          </div>
+          <h3>Step 1: Report</h3>
+          <p>User reports a lost item using the portal's interface.</p>
+        </div>
+        <div class="how-it-works-card text-center">
+          <div class="how-it-works-icon">
+            <i class="fas fa-search"></i>
+          </div>
+          <h3>Step 2: Database Entry</h3>
+    <p>The item details are stored in the database securely.</p>
+</div>
+
+<div class="how-it-works-card">
+    <div class="how-it-works-icon">
+        <i class="fas fa-search-location"></i>
+    </div>
+    <h3>Step 3: Search</h3>
+    <p>User can search for their lost items using various filters.</p>
+</div>
+
+<div class="how-it-works-card">
+    <div class="how-it-works-icon">
+        <i class="fas fa-check"></i>
+    </div>
+    <h3>Step 4: Verification</h3>
+    <p>Admin verifies the claim and matches it with found item.</p>
+</div>
+
+<div class="how-it-works-card">
+    <div class="how-it-works-icon">
+        <i class="fas fa-handshake"></i>
+    </div>
+    <h3>Step 5: Return</h3>
+    <p>Verified items are returned to their rightful owners.</p>
+</div>
+        </div>
+      </div>
+    </div>
+    <!-- Testimonial section -->
+     <section id="testimonials" class="py-5">
+    <div class="container">
+
+        <h2 class="animated-header text-center">What Our Users Say</h2>
+
+        <div class="row">
+
+            <!-- Testimonial 1 -->
+            <div class="col-md-4">
+                <div class="testimonial-card bg-light-blue text-dark">
+
+                    <div class="testimonial-icon">
+                        <i class="bi bi-quote"></i>
+                    </div>
+
+                    <p>
+                        "This portal made it so easy to find my lost wallet.
+                        The process was smooth and the notifications were
+                        timely. Highly recommend!"
+                    </p>
+
+                    <h5>John Doe</h5>
+                    <small>Verified User</small>
+
+                </div>
+            </div>
+
+            <!-- Testimonial 2 -->
+            <div class="col-md-4">
+                <div class="testimonial-card bg-light-blue text-dark">
+
+                    <div class="testimonial-icon">
+                        <i class="bi bi-quote"></i>
+                    </div>
+
+                    <p>
+                        "I Found a lost phone and the system helped me 
+                        connect with the owner quickly. Great job on
+                        maaking this easy and efficient!"
+                    </p>
+
+                    <h5>Jane Smith</h5>
+                    <small>Verified Finder</small>
+
+                </div>
+            </div>
+            <!-- Testimonial 3 -->
+             <div class="col-md-4">
+                <div class="testimonial-card bg-light-yellow text-dark">
+
+                    <div class="testimonial-icon">
+                        <i class="bi bi-quote"></i>
+                    </div>
+
+                    <p>
+                        "The lost and found portal is a lifesaver!
+                        I was able to report my lost keys and get them
+                        back in no time.  Thank you!"
+                    </p>
+
+                    <h5>Emily Johnson</h5>
+                    <small>Verified Finder</small>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- Latest Updates section -->
+<!-- Latest Updates section -->
+<section id="latest-updates" class="py-5">
+
+    <div class="container position-relative">
+
+        <h2 class="animated-header text-center mb-4">
+            Latest Updates
+        </h2>
+
+        <!-- Chevron arrows -->
+        <div class="arrow-container">
+
+            <button class="btn btn-light" id="prev-update">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+
+            <button class="btn btn-light" id="next-updates">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+
+        </div>
+
+
+        <!-- Updates wrapper -->
+        <div class="latest-updates-wrapper" id="updates-wrapper">
+
+            <!-- Card 1 -->
+            <div class="update-card">
+
+                <div class="update-icon">
+                    <i class="fas fa-bell"></i>
+                </div>
+
+                <h3>New Feature Launch</h3>
+
+                <p>
+                    We have launched a new feature to enhance
+                    the user experience. Check it out now!
+                </p>
+
+            </div>
+
+
+            <!-- Card 2 -->
+            <div class="update-card">
+
+                <div class="update-icon">
+                    <i class="fas fa-shield-alt"></i>
+                </div>
+
+                <h3>Security Update</h3>
+
+                <p>
+                    We have updated our security measures to better
+                    protect your data. Your data is safe with us.
+                </p>
+
+            </div>
+
+
+            <!-- Card 3 -->
+            <div class="update-card">
+
+                <div class="update-icon">
+                    <i class="fas fa-desktop"></i>
+                </div>
+
+                <h3>Improved UI</h3>
+
+                <p>
+                    Our user interface has been revamped for a more
+                    intuitive and seamless experience.
+                </p>
+
+            </div>
+
+
+            <!-- Card 4 -->
+            <div class="update-card">
+
+                <div class="update-icon">
+                    <i class="fas fa-handshake"></i>
+                </div>
+
+                <h3>New Partnerships</h3>
+
+                <p>
+                    We have partnered with leading brands to bring you
+                    more value and services.
+                </p>
+
+            </div>
+
+
+            <!-- Card 5 -->
+            <div class="update-card">
+
+                <div class="update-icon">
+                    <i class="fas fa-comments"></i>
+                </div>
+
+                <h3>User Feedback</h3>
+
+                <p>
+                    Your feedback is invaluable to us. We have implemented
+                    changes based on your suggestions.
+                </p>
+
+            </div>
+
+        </div>
+        <!-- End updates wrapper -->
+
+    </div>
+    <!-- End container -->
+
+</section>
+<!-- End Latest Updates section -->
+
+<!-- Contact us section -->
+ <!-- Contact Us Section -->
+<section id="contact-us" class="py-5">
+    <div class="container">
+
+        <h2 class="animated-header text-center">
+            Contact Us
+        </h2>
+
+        <div class="row">
+
+            <!-- Contact Details -->
+            <div class="col-md-6">
+                <div class="contact-details bg-light p-4">
+
+                    <h3>Get in Touch</h3>
+
+                    <p>
+                        If you have any questions or need further
+                        assistance, please feel free to reach out
+                        to us through the following contact details.
+                    </p>
+
+                    <ul>
+                        <li>
+                            <i class="bi bi-geo-alt"></i>
+                            1234 Street
+                        </li>
+
+                        <li>
+                            <i class="bi bi-telephone"></i>
+                            +1 (234) 567-890
+                        </li>
+
+                        <li>
+                            <i class="bi bi-envelope"></i>
+                            support@example.com
+                        </li>
+                    </ul>
+
+                </div>
+            </div>
+
+            <!-- Contact Form -->
+            <div class="col-md-6">
+                <div class="contact-form bg-light p-4">
+
+                    <h3>Send Us a Message</h3>
+
+                    <form id="contact-form">
+
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input
+                                type="text"
+                                id="name"
+                                class="form-control"
+                                placeholder="Enter your name"
+                            >
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input
+                                type="email"
+                                id="email"
+                                class="form-control"
+                                placeholder="Enter your email"
+                            >
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea
+                                id="message"
+                                class="form-control"
+                                rows="5"
+                                placeholder="Enter your message"
+                            ></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary">
+                            Send Message
+                        </button>
+
+                    </form>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+  <!-- advanced footer section -->
+   <footer class="text-center py-4 advanced-footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4">
+          <h5>Contact us</h5>
+          <ul class="list-unstyled">
+          <li>
+            <a href="mailto:info@kiet.edu"><i class="bi bi-envelope"></i>info@kiet.edu</a>
+          </li>
+          <li>
+            <a href="tel:+9639476796"><i class="bi bi-telephone"></i> +963 947 6796</a>
+          </li>
+          </ul> 
+         
+        <a href="#" class="text-white"><i class="fab fa-facebook-f"></i></a> 
+        <a href="#" class="text-white"><i class="fab fa-twitter"></i></a> 
+        <a href="#" class="text-white"><i class="fab fa-instagram"></i></a>
+     
+    </div>
+    <div class="col-md-4">
+      <h5>Quick Links</h5>
+      <ul class="list-unstyled">
+        <li><a href="about.html"><i class="bi bi-info-circle"></i> About us</a></li>
+        <li><a href="categories"><i class="bi bi-card-list"></i> Categories</a></li>
+        <li><a href="search" ><i class="bi bi-search"></i> Search</a></li> 
+      </ul>
+    </div>
+    <div class="col-md-4">
+      <h5>Follow us</h5>
+      <ul class="list-unstyled social-icons">
+        <li>
+          <li><a href="a"><i class="bi bi-facebook"></i> </a>
+        </li>
+        <li><a href="about.html"><i class="bi bi-instagram"></i></a>
+        </li>
+        <li><a href="about.html"><i class="bi bi-Linkedin"></i></a>
+       </li>
+      </ul>
+
+      <div class="newsletter mt-4">
+        <h5>Subscribe to our Newsletter</h5>
+        <form id="NewsletterForm">
+          <div class="input-group">
+            <input type="email" class="form-control" placeholder="Enter your email" required>
+            <div class="input-group-append">
+              <button class="btn btn-primary" type="submit">Subscribe</button>
+            </div>
+          </div>
+        </div>
+          <p> Copyright © 2024 Lost and Found Portal. All rights reserved.</p>
+        </form>
+      </footer>
+        
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
